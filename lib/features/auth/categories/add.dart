@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,6 +17,7 @@ class _AddCategoryState extends State<AddCategory> {
   Future<void> addCategory() {
     return categories.add({
       'category': add.text,
+      'id':FirebaseAuth.instance.currentUser!.uid  //to show categories i was added not some one else added
     })
         .then((value) => print("Category Added"))
         .catchError((error) => print("Failed to add Category: $error"));

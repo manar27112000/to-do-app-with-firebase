@@ -18,7 +18,10 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> getCategories() async {
     QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection('categories').get();
+        await FirebaseFirestore.instance
+            .collection('categories')
+            .where('id', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+            .get();  //to show categories i was added not some one else added
 
     data = querySnapshot.docs;
 
@@ -72,31 +75,31 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (BuildContext context, int index) {
                     return InkWell(
                       onLongPress: () {
-                        AwesomeDialog(context: context,
+                        AwesomeDialog(
+                          context: context,
                           dialogType: DialogType.warning,
                           title: 'Are you sure?',
                           desc: 'You want to delete this category?',
-                          btnCancel :MaterialButton(
+                          btnCancel: MaterialButton(
                             child: Text('Cancel'),
                             onPressed: () => Navigator.pop(context),
                             color: Colors.red,
                           ),
                           btnOk: MaterialButton(
                             child: Text('Delete'),
-                            onPressed: () { FirebaseFirestore.instance
-                                .collection('categories')
-                                .doc(data[index].id)
-                                .delete();
+                            onPressed: () {
+                              FirebaseFirestore.instance
+                                  .collection('categories')
+                                  .doc(data[index].id)
+                                  .delete();
                               Navigator.pop(context);
                               setState(() {
                                 data.removeAt(index);
-                              });},
+                              });
+                            },
                             color: Colors.green,
                           ),
-
-                        )
-                        .show();
-
+                        ).show();
                       },
                       child: Card(
                         child: Column(
