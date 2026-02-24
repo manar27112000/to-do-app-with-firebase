@@ -1,20 +1,38 @@
-<<<<<<< HEAD
-# note_app_with_firebase
+# To Do App with Firebase 🚀
 
-A new Flutter project.
+A Flutter application integrated with Firebase for authentication and cloud database storage.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🎥 Demo Video
 
-A few resources to get you started if this is your first Flutter project:
+[![Watch the Demo](https://img.youtube.com/vi/I7NFiARiKSk/maxresdefault.jpg)](https://youtu.be/I7NFiARiKSk?si=3QBdo4-D_Ofjeatg)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# to-do-app-with-firebase
->>>>>>> 6813d6a6aefe231d87c59dc27a46c25b61f22d9a
+## 🔥 Project Features
+
+- ✅ User Authentication (Email & Password)
+- ✅ Create / Edit / Delete Tasks
+- ✅ Store Tasks in Firebase Firestore
+- ✅ Real-time Data Updates
+- ✅ Clean UI with Flutter
+
+---
+
+## 🛠 Technologies Used
+
+- Flutter
+- Dart
+- Firebase Authentication
+- Firebase Firestore
+- Firebase Core
+
+---
+
+## 🚀 Installation
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+flutter pub get
+flutter run
